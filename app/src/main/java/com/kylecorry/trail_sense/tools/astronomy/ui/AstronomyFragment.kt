@@ -447,6 +447,7 @@ class AstronomyFragment : BoundFragment<ActivityAstronomyBinding>() {
             val error = UserError(
                 ErrorBannerReason.LocationNotSet,
                 getString(R.string.location_not_set),
+                getString(R.string.desc_location_not_set),
                 R.drawable.satellite,
                 getString(R.string.set)
             ) {
@@ -457,7 +458,10 @@ class AstronomyFragment : BoundFragment<ActivityAstronomyBinding>() {
             gpsErrorShown = true
         } else if (gps is CachedGPS && location == Coordinate.zero) {
             val error = UserError(
-                ErrorBannerReason.NoGPS, getString(R.string.location_disabled), R.drawable.satellite
+                ErrorBannerReason.NoGPS,
+                getString(R.string.location_disabled),
+                getString(R.string.desc_location_disabled),
+                R.drawable.satellite
             )
             (requireActivity() as MainActivity).errorBanner.report(error)
             gpsErrorShown = true

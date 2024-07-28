@@ -597,6 +597,9 @@
     <string name="location_not_set">Location not set</string>
     <string name="set">Set</string>
     <string name="location_disabled">Location is disabled</string>
+    <string name="desc_location_disabled">Turn location service on manually in your device\'s settings.</string>
+    <string name="desc_location_not_set">Set a location in settings first.</string>
+    <string name="desc_nocompass">Some features would be affected.</string>
     <string name="gps_cache">GPS cache</string>
     <string name="guide_light_meter_description">How to determine the beam distance of flashlights</string>
     <string name="todays_forecast">Today\'s forecast</string>

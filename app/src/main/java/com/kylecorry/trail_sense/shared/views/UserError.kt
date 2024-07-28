@@ -6,6 +6,7 @@ import com.kylecorry.trail_sense.shared.ErrorBannerReason
 data class UserError(
     val reason: ErrorBannerReason,
     val title: String,
+    val description: String? = null,
     @DrawableRes val icon: Int,
     val action: String? = null,
     val onAction: () -> Unit = {}

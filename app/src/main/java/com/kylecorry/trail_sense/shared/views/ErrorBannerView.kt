@@ -81,6 +81,7 @@ class ErrorBannerView(context: Context, attrs: AttributeSet?) : ConstraintLayout
     private fun displayError(error: UserError) {
         binding.errorText.text = error.title
         binding.errorAction.text = error.action
+        binding.errorDescription.text = error.description
         binding.errorIcon.setImageResource(error.icon)
         onAction = error.onAction
         binding.errorAction.isVisible = !error.action.isNullOrEmpty()

@@ -31,11 +31,13 @@ class NavigatorUserErrors(private val fragment: NavigatorFragment) {
         GPSDiagnosticScanner.GPS_UNAVAILABLE to UserError(
             ErrorBannerReason.NoGPS,
             fragment.getString(R.string.location_disabled),
+            fragment.getString(R.string.desc_location_disabled),
             R.drawable.satellite
         ),
         GPSDiagnosticScanner.LOCATION_UNSET to UserError(
             ErrorBannerReason.LocationNotSet,
             fragment.getString(R.string.location_not_set),
+            fragment.getString(R.string.desc_location_not_set),
             R.drawable.satellite,
             fragment.getString(R.string.set)
         ) {
@@ -46,6 +48,7 @@ class NavigatorUserErrors(private val fragment: NavigatorFragment) {
         GPSDiagnosticScanner.GPS_TIMED_OUT to UserError(
             ErrorBannerReason.GPSTimeout,
             fragment.getString(R.string.gps_signal_lost),
+            null,
             R.drawable.satellite
         ),
         MagnetometerDiagnosticScanner.MAGNETOMETER_POOR to UserError(
@@ -54,6 +57,7 @@ class NavigatorUserErrors(private val fragment: NavigatorFragment) {
                 R.string.compass_calibrate_toast,
                 formatter.formatQuality(Quality.Poor).lowercase(Locale.getDefault())
             ),
+            null,
             R.drawable.ic_compass_icon,
             fragment.getString(R.string.how)
         ) {
@@ -66,6 +70,7 @@ class NavigatorUserErrors(private val fragment: NavigatorFragment) {
                 fragment.requireContext(),
                 fragment.getString(R.string.pref_compass_sensor_title)
             ),
+            fragment.getString(R.string.desc_nocompass),
             R.drawable.ic_compass_icon
         ) {
             MissingSensorAlert(fragment.requireContext()).alert(fragment.getString(R.string.pref_compass_sensor_title))

@@ -13,8 +13,8 @@
 
     <ImageView
         android:id="@+id/error_icon"
-        android:layout_width="16dp"
-        android:layout_height="16dp"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
         android:layout_marginStart="12dp"
         android:scaleType="fitCenter"
         android:src="@drawable/satellite"
@@ -28,13 +28,33 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="3dp"
         android:layout_marginEnd="8dp"
+        android:layout_marginBottom="3dp"
         android:textColor="@android:color/black"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/error_description"
         app:layout_constraintEnd_toStartOf="@id/error_action"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@id/error_icon"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="@string/location_disabled" />
+
+    <TextView
+        android:id="@+id/error_description"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="4dp"
+        android:textColor="@android:color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/error_action"
+        app:layout_constraintStart_toEndOf="@+id/error_icon"
+        app:layout_constraintTop_toBottomOf="@+id/error_text"
+        app:layout_constraintVertical_bias="0.6"
+        tools:text="@string/desc_location_disabled" />
 
     <Button
         android:id="@+id/error_action"
@@ -56,4 +76,5 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_cancel"
         app:tint="@color/black" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

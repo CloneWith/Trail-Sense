@@ -332,6 +332,7 @@ class ThermometerSettingsFragment : AndromedaPreferenceFragment() {
         val error = UserError(
             ErrorBannerReason.LocationNotSet,
             getString(R.string.location_not_set) + "\n" + getString(R.string.for_historic_temperatures),
+            null,
             R.drawable.satellite,
             getString(R.string.set)
         ) {
